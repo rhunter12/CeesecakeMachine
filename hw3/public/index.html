@@ -1,0 +1,84 @@
+<!doctype html>
+
+<!-- Ryan Hunter-Bliss -->
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Cheesecake</title>
+	<link rel="stylesheet" href="stylesheets/bliss22_style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="javascripts/bliss22_script.js"></script>
+</head>
+
+<body>
+	
+	<!-- Top of page with title and image-->
+	<h1>Cheesecake Order Form</h1>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg" width="300">
+	
+	<p id="summary"></p>
+	<p id="qty"></p>
+	<p id="top"></p>
+	<p id="notes"></p>
+	
+	<!-- Order Area -->
+	<div class="orderArea" id="orderArea">
+		<p>Quantity   Topping</p>
+	
+		<div style="display: table-cell">
+			<div style="display: inline-block">
+				<!-- Quantity picker -->
+				<select id="quantity">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+			</div>
+
+			<!-- Radio buttons -->
+			<div style="display: inline-block; margin-left: 20px" id="topping">
+				<input type="radio" name="topping" value="Plain" checked/>Plain<br>
+				<input type="radio" name="topping" value="Cherry"/>Cherry<br>
+				<input type="radio" name="topping" value="Chocolate"/>Chocolate
+			</div>
+		</div>
+
+		<!-- Notes section -->
+		<p>Notes:</p>
+		<textarea id="txt">Enter any special instructions here.</textarea><br>
+		<input type="button" value="Order" id="run"/>
+	</div>
+	
+	<!-- List of previous orders -->
+	<!-- Idea for dropdown from https://www.w3schools.com/howto/howto_css_dropdown.asp-->
+	<div style="display: table-cell">
+		<div style="display: inline-block">
+			<h2>Orders for </h2>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn" id="dropbtn">Jan</button>
+			<div class="dropdown-content">
+				<a href="#">Jan</a>
+				<a href="#">Feb</a>
+				<a href="#">Mar</a>
+				<a href="#">Apr</a>
+				<a href="#">May</a>
+				<a href="#">Jun</a>
+				<a href="#">Jul</a>
+				<a href="#">Aug</a>
+				<a href="#">Sep</a>
+				<a href="#">Oct</a>
+				<a href="#">Nov</a>
+				<a href="#">Dec</a>
+			</div>
+		</div>	
+	</div>
+	
+	<ul>
+		<li>11 cherry</li>
+		<li>17 choclate</li>
+		<li>31 plain</li>
+	</ul>
+</body>
+</html>
