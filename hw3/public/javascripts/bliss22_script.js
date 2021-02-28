@@ -25,5 +25,22 @@ $(function() {
 			$('#orderArea').hide();
 		}
 	});
-});
 
+	$('.month').click(function() {
+		//hide the default data and previous data
+		$('#presetOrders').hide();
+		$('#monthSummary').text("");
+		//get orders from server
+		$.post("/orders",{},
+		function(obj, status) {
+			//for each item in json, ...
+			$.each(obj, function(index, item) {
+				var name;
+				//... print the qty and topping
+				for (name in item) {
+					$('#monthSummary').append("- " + obj.data[name].quantity + " " + obj.data[name].topping).append("<br/>");
+				}
+			});
+		});
+	});	
+});
