@@ -1,16 +1,21 @@
+//Ryan Hunter-Bliss
+
 var express = require('express');
 var router = express.Router();
 
-var myJson = { 
-  "data":[
-    {"topping":"cherry", "quantity":"2"},
-    {"topping":"plain", "quantity":"6"},
-    {"topping":"chocolate", "quantity":"3"}
-  ]
-}
+var connection = require('./dbms');
 
-router.post('/', function(req, res, next) {
-  res.json(myJson);
-});
+
+  router.route('/')
+  .post(function(req, res, next) {
+    connection.dbquery(
+      req.body.query,
+      function(error, results, fields) {
+        if (error) throw error;
+        res.json(results);
+      }
+    );
+  });
+
 
 module.exports = router;
